@@ -4,255 +4,254 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odyssey • Midveil</title>
-    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
         
         :root {
-            --stone: #2c2f33;
-            --deep-blue: #0f1626;
-            --slate: #1e252f;
-            --accent-blue: #4a7c9d;
-            --green: #3a8c4a;
+            --stone-dark: #1c2028;
+            --stone: #2a2f38;
+            --slate: #1e242f;
+            --blue-accent: #486a85;
+            --text: #d1d1d1;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
         
         body {
-            font-family: 'Cinzel', serif;
-            background: linear-gradient(rgba(15, 22, 38, 0.95), rgba(15, 22, 38, 0.98)), 
-                        url('https://picsum.photos/id/1015/1920/1080') center/cover fixed;
-            color: #d4d4d4;
-            line-height: 1.7;
+            font-family: 'Cinzel', system-ui, serif;
+            background: #0f131a url('https://picsum.photos/id/1015/1920/1080') center/cover fixed;
+            color: var(--text);
             min-height: 100vh;
+            line-height: 1.6;
         }
         
-        .top-bar {
-            background: #11141a;
-            padding: 8px 15px;
+        .browser-bar {
+            background: #0a0c10;
+            padding: 6px 12px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid #334455;
-            font-size: 14px;
+            gap: 10px;
+            border-bottom: 1px solid #334455;
         }
         
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-symbol {
-            width: 55px;
-            height: 55px;
-            background: #1e252f;
-            border: 3px solid #4a7c9d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: #4a7c9d;
-            font-family: 'UnifrakturMaguntia', cursive;
-        }
-        
-        .logo-text {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 38px;
-            color: #b8c6d9;
-            letter-spacing: 3px;
-        }
-        
-        .status-bar {
-            background: #1a2028;
-            padding: 14px 30px;
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            border-bottom: 2px solid #334455;
-            flex-wrap: wrap;
-        }
-        
-        .status-item {
+        .logo-area {
+            background: var(--stone-dark);
+            padding: 20px 0;
             text-align: center;
+            border-bottom: 4px solid #334455;
         }
         
-        .status-label {
-            font-size: 13px;
-            color: #8899aa;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
         }
         
-        .status-value {
-            font-size: 24px;
-            font-weight: 700;
-        }
-        
-        .online { color: #3a8c4a; }
-        
-        nav {
-            background: #1e252f;
-            padding: 16px 20px;
+        .symbol {
+            width: 72px;
+            height: 72px;
+            background: #1e242f;
+            border: 4px solid #486a85;
+            color: #486a85;
+            font-size: 42px;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
-            gap: 12px;
+            font-family: 'UnifrakturMaguntia', cursive;
+        }
+        
+        .odyssey-text {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 52px;
+            color: #b5c0d0;
+            letter-spacing: 6px;
+        }
+        
+        .midveil {
+            text-align: center;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 46px;
+            color: #486a85;
+            background: var(--stone);
+            padding: 12px 0;
+            letter-spacing: 8px;
             border-bottom: 3px solid #334455;
         }
         
-        .nav-btn {
-            background: transparent;
-            color: #b8c6d9;
-            border: 2px solid #334455;
-            padding: 10px 26px;
-            font-size: 17px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        .status {
+            background: #161b24;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 90px;
+            border-bottom: 3px solid #334455;
+            flex-wrap: wrap;
         }
         
-        .nav-btn:hover, .nav-btn.active {
-            background: #2c3a4a;
-            border-color: #4a7c9d;
+        .status-box {
+            text-align: center;
+        }
+        
+        .label {
+            font-size: 14px;
+            color: #8899aa;
+            text-transform: uppercase;
+        }
+        
+        .value {
+            font-size: 26px;
+            font-weight: bold;
+        }
+        
+        .online { color: #4a8c5a; }
+        
+        nav {
+            background: var(--stone);
+            padding: 18px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            border-bottom: 4px solid #334455;
+        }
+        
+        .nav-button {
+            padding: 12px 32px;
+            background: transparent;
+            border: 2px solid #445566;
+            color: #b5c0d0;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .nav-button:hover,
+        .nav-button.active {
+            background: #334455;
+            border-color: #486a85;
             color: white;
         }
         
-        .main {
-            max-width: 1080px;
+        .content {
+            max-width: 1100px;
             margin: 50px auto;
             padding: 0 20px;
         }
         
-        .hero-box {
-            background: rgba(26, 32, 44, 0.95);
-            border: 3px solid #334455;
-            padding: 55px 45px;
+        .welcome {
+            background: rgba(22, 27, 36, 0.96);
+            border: 3px solid #445566;
+            padding: 50px 45px;
             text-align: center;
         }
         
-        .title {
+        .welcome h1 {
             font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 52px;
-            color: #b8c6d9;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(74, 124, 157, 0.3);
+            font-size: 48px;
+            color: #b5c0d0;
+            margin-bottom: 15px;
         }
         
-        .subtitle {
-            font-size: 28px;
-            color: #4a7c9d;
-            margin-bottom: 35px;
-        }
-        
-        .welcome-text {
+        .welcome p {
             font-size: 18px;
-            max-width: 780px;
-            margin: 0 auto 35px;
+            max-width: 760px;
+            margin: 22px auto;
             color: #c8d0d8;
         }
         
-        .discord-btn {
+        .discord {
             display: block;
             width: fit-content;
-            margin: 60px auto 40px;
-            padding: 14px 48px;
-            background: #2c3a4a;
-            color: #b8c6d9;
-            font-size: 19px;
+            margin: 55px auto;
+            padding: 16px 60px;
+            background: #2a3746;
+            color: #b5c0d0;
+            font-size: 20px;
             text-decoration: none;
-            border: 2px solid #4a7c9d;
+            border: 3px solid #486a85;
             transition: all 0.3s;
         }
         
-        .discord-btn:hover {
-            background: #4a7c9d;
+        .discord:hover {
+            background: #486a85;
             color: white;
-            border-color: #b8c6d9;
         }
         
         footer {
             text-align: center;
-            padding: 40px 20px;
-            background: #11141a;
+            padding: 35px;
+            background: #0a0c10;
             color: #667788;
             font-size: 15px;
-            border-top: 2px solid #334455;
         }
         
         @media (max-width: 768px) {
-            .title { font-size: 38px; }
-            .subtitle { font-size: 22px; }
-            .status-bar { gap: 40px; padding: 12px; }
+            .odyssey-text { font-size: 38px; }
+            .midveil { font-size: 32px; }
+            .welcome h1 { font-size: 36px; }
         }
     </style>
 </head>
 <body>
-    <div class="top-bar">
-        <div>odyssey.app</div>
-        <div style="color:#4a7c9d;">Midveil</div>
+    <!-- Browser top bar -->
+    <div class="browser-bar">
+        <div style="color:#666;">odyssey.app</div>
     </div>
 
-    <div class="logo-container" style="padding: 25px 20px; background:#1a2028; display:flex; justify-content:center; align-items:center; gap:20px; border-bottom:3px solid #334455;">
-        <div class="logo-symbol">⚔︎</div>
-        <div class="logo-text">ODYSSEY</div>
-    </div>
-
-    <div style="text-align:center; font-size:42px; color:#4a7c9d; padding:15px; background:#1e252f; letter-spacing:4px; font-family:'UnifrakturMaguntia', cursive;">
-        MIDVEIL
-    </div>
-
-    <div class="status-bar">
-        <div class="status-item">
-            <div class="status-label">Server Status</div>
-            <div class="status-value online">ONLINE</div>
-        </div>
-        <div class="status-item">
-            <div class="status-label">Players Online</div>
-            <div class="status-value" style="color:#b8c6d9;">318</div>
+    <!-- Logo -->
+    <div class="logo-area">
+        <div class="logo">
+            <div class="symbol">⛨</div>
+            <div class="odyssey-text">ODYSSEY</div>
         </div>
     </div>
 
+    <!-- Midveil Title -->
+    <div class="midveil">MIDVEIL</div>
+
+    <!-- Status -->
+    <div class="status">
+        <div class="status-box">
+            <div class="label">Server Status</div>
+            <div class="value online">ONLINE</div>
+        </div>
+        <div class="status-box">
+            <div class="label">Players Online</div>
+            <div class="value">264</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
     <nav>
-        <button class="nav-btn active">Home</button>
-        <button class="nav-btn">News</button>
-        <button class="nav-btn">Marketplace</button>
-        <button class="nav-btn">Wiki</button>
+        <button class="nav-button active">Home</button>
+        <button class="nav-button">News</button>
+        <button class="nav-button">Marketplace</button>
+        <button class="nav-button">Wiki</button>
+        <button class="nav-button">Community</button>
     </nav>
 
-    <div class="main">
-        <div class="hero-box">
-            <h1 class="title">Welcome to Odyssey</h1>
-            <div class="subtitle">Midveil</div>
+    <!-- Main Content -->
+    <div class="content">
+        <div class="welcome">
+            <h1>Welcome to Odyssey</h1>
+            <h2 style="color:#486a85; font-size:28px; margin:15px 0 30px;">Midveil</h2>
             
-            <p class="welcome-text">
-                Join the world of Midveil and create up to six unique characters, each hailing from a variety of distinct classes. 
-                All offering different perks and magical abilities to suit your playstyle.
-            </p>
+            <p>Join the world of Midveil today and create up to six unique characters, each hailing from a variety of distinct classes, all offering different perks and magical abilities to suit your playstyle.</p>
             
-            <p class="welcome-text">
-                Embark on quests with friends and level up your skills. Master the craft of a Blacksmith to forge powerful weapons, 
-                shields, and armor, or become an Alchemist, specializing in creating magical potions for healing and spell enhancements.
-            </p>
+            <p>Embark on quests with friends and level up your skills. Master the craft of a Blacksmith to forge powerful weapons, shields, and armor, or become an Alchemist, specializing in creating magical potions for healing and spell enhancements.</p>
             
-            <p class="welcome-text">
-                Engage in epic battles against monsters and rival players alike in this persistent open world.
-            </p>
+            <p>Engage in epic battles against monsters and rival players alike in this dark fantasy realm.</p>
         </div>
     </div>
 
-    <a href="https://discord.gg/yourserver" class="discord-btn" target="_blank">
+    <!-- Discord -->
+    <a href="https://discord.gg/yourinvite" target="_blank" class="discord">
         JOIN OUR DISCORD
     </a>
 
     <footer>
-        © Odyssey • Midveil • A dark fantasy MMORPG<br>
-        PC • Mobile • Cross-platform
+        © 2026 Odyssey • Midveil • PC &amp; Mobile
     </footer>
 </body>
 </html>
